@@ -1,0 +1,16 @@
+/* Navbar */
+.navbar {
+  width: 100%;
+  background: #2fa084;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.navbar h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
