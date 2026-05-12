@@ -1,13 +1,8 @@
-import Navbar from "../../components/Navbar/Navbar";
 import Styles from "./About.module.css";
 
 export default function About() {
   return (
     <div className={Styles.body}>
-      <header>
-        <Navbar />
-      </header>
-
       {/* Main */}
       <main>
         <section className={Styles.about}>
