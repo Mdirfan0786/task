@@ -1,9 +1,11 @@
-import Styles from "./todoCounter.module.css";
+import styles from "./todoCounter.module.css";
 
-export default function todoCounter({ todos }) {
+export default function TodoCounter({ todos }) {
+  const remainingTasks = todos.filter((todo) => !todo.completed).length;
+
   return (
     <div>
-      <p className={Styles.task_counter}>{todos.length} Task left</p>
+      <p className={styles.task_counter}>{remainingTasks} Tasks Left</p>
     </div>
   );
 }

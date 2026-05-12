@@ -37,6 +37,14 @@ export default function TaskManager() {
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
   };
 
+  const handleToggle = (id) => {
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo,
+      ),
+    );
+  };
+
   return (
     <>
       <TaskForm
@@ -52,7 +60,7 @@ export default function TaskManager() {
 
       <FilterButtons currentFilter={filter} onFilterChange={setFilter} />
 
-      <TaskList todos={todos} onDelete={handleDelete} />
+      <TaskList todos={todos} onDelete={handleDelete} onToggle={handleToggle} />
     </>
   );
 }

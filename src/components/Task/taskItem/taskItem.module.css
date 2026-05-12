@@ -1,5 +1,4 @@
-/* List Item */
-li {
+.taskItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,24 +12,24 @@ li {
 }
 
 /* Hover Effect */
-li:hover {
+.taskItem:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 }
 
 /* Completed */
-li.completed {
+.completed {
   border-left: 5px solid #1f6f5f;
   background: #e6f4ef;
   opacity: 0.8;
 }
 
-li.completed span {
+.completed span {
   text-decoration: line-through;
   color: #888;
 }
 
-li button {
+.deleteBtn {
   background: #ff4d4d;
   color: white;
   border: none;
@@ -41,11 +40,11 @@ li button {
 }
 
 /* Button Hover */
-li button:hover {
+.deleteBtn:hover {
   background: #cc0000;
 }
 
-li span {
+.text {
   flex: 1;
   margin-right: 10px;
   word-break: break-word;

@@ -1,12 +1,21 @@
 import Button from "../../ui/Button/Button";
 import styles from "./taskItem.module.css";
 
-export default function TaskItem({ todo, onDelete }) {
+export default function TaskItem({ todo, onDelete, onToggle }) {
   return (
-    <li className={styles.taskItem}>
-      <span>{todo.text}</span>
+    <li
+      className={`${styles.taskItem} ${todo.completed ? styles.completed : ""}`}
+      onClick={() => onToggle(todo.id)}
+    >
+      <span className={styles.text}>{todo.text}</span>
 
-      <Button onClick={() => onDelete(todo.id)} className={styles.deleteBtn}>
+      <Button
+        className={styles.deleteBtn}
+        onClick={(e) => {
+          e.stopPropagation();
+          onDelete(todo.id);
+        }}
+      >
         Delete
       </Button>
     </li>
