@@ -1,5 +1,5 @@
 import Navbar from "../components/Navbar/Navbar";
-import TaskManager from "../components/Task/TaskManager";
+import TaskManager from "../features/tasks/TaskManager";
 import Styles from "./Home.module.css";
 
 export default function Home() {

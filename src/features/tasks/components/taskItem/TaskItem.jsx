@@ -1,4 +1,4 @@
-import Button from "../../ui/Button/Button";
+import Button from "../../../../components/ui/Button/Button";
 import styles from "./taskItem.module.css";
 
 export default function TaskItem({ todo, onDelete, onToggle }) {

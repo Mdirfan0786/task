@@ -5,6 +5,10 @@
   flex-direction: column;
 }
 
+main {
+  padding: 1rem;
+}
+
 /* Container */
 .container {
   background: white;
