@@ -1,18 +1,24 @@
 import { useCallback, useMemo, useState } from "react";
-import useLocalStorage from "../../hooks/useLocalStorage";
+
+import useTodos from "../../hooks/useTodos";
+
 import { createTodo } from "../../utils/todoHelpers";
+import { filterTodos } from "../../utils/filterTodos";
+
 import TaskForm from "./components/taskForm/TaskForm";
 import FilterButtons from "./components/filterButton/FilterButtons";
 import TaskList from "./components/taskList/TaskList";
-import TodoCounter from "./components/todoCounter/todoCounter";
-import { filterTodos } from "../../utils/filterTodos";
+import TodoCounter from "./components/todoCounter/TodoCounter";
 
 export default function TaskManager() {
+  // ================= Input State =================
   const [task, setTask] = useState("");
 
-  const [todos, setTodos] = useLocalStorage("todos", []);
-
+  // ================= Filter State =================
   const [filter, setFilter] = useState("all");
+
+  // ================= Custom Todo Hook =================
+  const { todos, addTodo, deleteTodo, toggleTodo } = useTodos();
 
   // ================= Add Todo =================
   const handleSubmit = useCallback(
@@ -23,36 +29,27 @@ export default function TaskManager() {
 
       const newTodo = createTodo(task);
 
-      setTodos((prevTodos) => [...prevTodos, newTodo]);
+      addTodo(newTodo);
 
       setTask("");
     },
-    [task, setTodos],
+    [task, addTodo],
   );
 
   // ================= Delete Todo =================
   const handleDelete = useCallback(
     (id) => {
-      setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+      deleteTodo(id);
     },
-    [setTodos],
+    [deleteTodo],
   );
 
   // ================= Toggle Todo =================
   const handleToggle = useCallback(
     (id) => {
-      setTodos((prevTodos) =>
-        prevTodos.map((todo) =>
-          todo.id === id
-            ? {
-                ...todo,
-                completed: !todo.completed,
-              }
-            : todo,
-        ),
-      );
+      toggleTodo(id);
     },
-    [setTodos],
+    [toggleTodo],
   );
 
   // ================= Filter Todos =================
