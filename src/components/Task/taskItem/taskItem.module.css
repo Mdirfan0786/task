@@ -1,0 +1,52 @@
+/* List Item */
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+  padding: 0.7rem;
+  background: #f8fffb;
+  border-left: 5px solid #6fcf97;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Hover Effect */
+li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* Completed */
+li.completed {
+  border-left: 5px solid #1f6f5f;
+  background: #e6f4ef;
+  opacity: 0.8;
+}
+
+li.completed span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+li button {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Button Hover */
+li button:hover {
+  background: #cc0000;
+}
+
+li span {
+  flex: 1;
+  margin-right: 10px;
+  word-break: break-word;
+}

@@ -1,1 +1,14 @@
+/* Add Button */
+button {
+  padding: 0.6rem 1rem;
+  background: #2fa084;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
+button:hover {
+  background: #1f6f5f;
+}
